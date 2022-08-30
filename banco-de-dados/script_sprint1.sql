@@ -17,8 +17,8 @@ use sprint1;
 create table usuarios (
 	id_usuario int primary key auto_increment,
     nome_empresa varchar(255) not null,
-    CNPJ varchar(20) not null,
-	responsavel varchar(100) default ('Alguém'),
+    CNPJ char(20) not null,
+	responsavel varchar(100) default ('preencher depois'),
     email varchar(100), constraint chkEmail check
 		(email like ('%@%')),
 	senha varchar(255),
