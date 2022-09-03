@@ -6,37 +6,22 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-/* Remove list-style */ 
-    
-html, body, div, h1, h3 {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-}
-  
-h1, h3  {
   font-size: 1em;
   font-weight: normal;
-}
+} 
 
 #header {
-  height: 68px;
-  position: fixed;
+  height: 68px; 
   background-color: #115639;
   width: 100%;
-  max-height: 68px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
 }
 
 .T_logo {
   color: white;
   font-family: Roboto;
   font-weight: 500;
-  text-align: center;
   font-size: 30px;
   margin-left: 500px;
   margin-top: 15px;
@@ -61,5 +46,5 @@ h1, h3  {
 
 .in_01 {
   margin-left: 7px;
-  margin-bottom: 2px;
+  margin-bottom: 7px;
 }

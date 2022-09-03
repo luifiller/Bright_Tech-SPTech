@@ -16,11 +16,14 @@
     <div id="conteiner">
         <div id="div_01">
             <h3>Insira a quantidade de m² da sua empresa:</h3>
-                <input id="in_metro" class="in_01" type="number"><br>
+                <input id="in_metro" type="number" class="in_01"><br>
             
             <h3>Insira a quantidade de horas de funcionamento da sua empresa:</h3>
                 <input id="in_horas" type="number" class="in_01"><br>
-            
+
+            <h3>Insira a quantidade de dias de funcionamento da sua empresa:</h3>
+                <input id="in_dias_func" type="number" class="in_01"><br>
+
             <button class="b_simular" onclick="simular()">Simular</button>
             
             <div id="div_resultado"></div>
@@ -34,17 +37,18 @@
     function simular(){
         var m2 = Number(in_metro.value)
         var hr = Number(in_horas.value)
-
-        var dmes = (((hr * 0.08265)*(m2/16))*4)*21
-        var dmess = ((dmes * 0.2)/ 2)+(dmes / 2)
+        var dias_func = Number(in_dias_func.value)
+        
+        var total_conta = (((hr * 0.39208)*(m2/16))*4)*dias_func
+        var economia_solucao = ((total_conta * 0.2)/ 2)+(total_conta / 2)
         var arduino = 1000 * (m2/16)
-        var tempo = (arduino/(dmes - dmess))
+        var tempo = (arduino/(total_conta - economia_solucao))
 
         div_resultado.innerHTML = ('Em 5 horas você gasta 300 watts, dando um total de R$0,94 por mês, mas isso é por cada lâmpada acessa...<br>')
 
-        div_resultado.innerHTML += (`<br>Considerando que a cada 16m² seriam usados um conjunto de 4 lâmpadas, <strong style="color: red;">sua empresa estaria gastando um total de R$${dmes.toFixed(2)} por mês.</strong><br>`)
+        div_resultado.innerHTML += (`<br>Considerando que a cada 16m² seriam usados um conjunto de 4 lâmpadas, <strong style="color: red;">sua empresa estaria gastando um total de R$${total_conta.toFixed(2)} por mês.</strong><br>`)
         
-        div_resultado.innerHTML += (`<br>Utilizando nossa solução, Bright Sense, e considerando que as luzes diminuiam sua intensidade apenas pela metade do tempo, sua empresa gastaria um total de R$${dmess.toFixed(2)} no mês, <strong style="color: green;">gerando uma economia de ${(((dmes - dmess)/dmes)*100).toFixed(0)}%.</strong><br>`)
+        div_resultado.innerHTML += (`<br>Utilizando nossa solução, Bright Sense, e considerando que as luzes diminuiam em 20% sua intensidade por apenas metade do tempo, sua empresa gastaria um total de R$${economia_solucao.toFixed(2)} no mês, <strong style="color: green;">gerando uma economia de ${(((total_conta - economia_solucao)/total_conta)*100).toFixed(0)}%.</strong><br>`)
         
         div_resultado.innerHTML += (`<br>Com um investimento de R$1000,00 por dispositivo, o qual cobrirá 16m², <strong> <i> você recuperaria seu insvestimento em ${tempo.toFixed()} meses!</i></strong>`)
     }
