@@ -15,7 +15,7 @@
   background-color: #115639;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .T_logo {
@@ -23,7 +23,6 @@
   font-family: Roboto;
   font-weight: 500;
   font-size: 30px;
-  margin-left: 500px;
   margin-top: 15px;
 }
 
