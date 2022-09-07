@@ -1,4 +1,4 @@
--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -21,7 +21,7 @@
             <h3>Insira a quantidade de horas por dia de funcionamento da sua empresa:</h3>
                 <input id="in_horas" type="number" class="in_01"><br>
 
-            <h3>Insira a quantidade de dias de funcionamento da sua empresa:</h3>
+            <h3>Insira a quantidade de dias de funcionamento da sua empresa por mês:</h3>
                 <input id="in_dias_func" type="number" class="in_01"><br>
 
             <button class="b_simular" onclick="simular()">Simular</button>
@@ -41,8 +41,8 @@
         
         var total_conta = (((hr * 0.39208)*(m2/16))*4)*dias_func
         var economia_solucao = ((total_conta * 0.2)/ 2)+(total_conta / 2)
-        var arduino = 1000 * (m2/16)
-        var tempo = (arduino/(total_conta - economia_solucao))
+        var dispositivo = 1000 * (m2/16)
+        var tempo = (dispositivo/(total_conta - economia_solucao))
 
         div_resultado.innerHTML = ('Estima-se que em 8 horas você gasta 480 watts, dando um total de R$15,68 por semana, mas isso é por cada lâmpada acessa...<br>')
 
